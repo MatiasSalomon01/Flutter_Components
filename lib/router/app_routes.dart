@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_components/models/models.dart';
-import 'package:flutter_components/screens/alert_screen.dart';
 import '../screens/screens.dart';
 
 class AppRoutes {
