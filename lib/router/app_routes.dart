@@ -21,6 +21,11 @@ class AppRoutes {
         name: 'ListView2 Tipo 2',
         screen: const ListView2Screen(),
         icon: Icons.list),
+    MenuOption(
+        route: 'card_screen',
+        name: 'Card Screen',
+        screen: const CardScreen(),
+        icon: Icons.card_membership_sharp)
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
