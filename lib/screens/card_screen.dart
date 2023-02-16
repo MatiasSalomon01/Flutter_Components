@@ -27,6 +27,7 @@ class CardScreen extends StatelessWidget {
             height: 10,
           ),
           CustomCardType2_1(
+            name: 'Paisaje 2',
             imageUrl:
                 'https://images.squarespace-cdn.com/content/v1/59523d5c4c8b031b6d9dcb5b/1645865436351-NF1WX4AHJUE43OZ3GJCY/_S6A1420-Edit-Edit.jpg?format=2500w',
           ),
