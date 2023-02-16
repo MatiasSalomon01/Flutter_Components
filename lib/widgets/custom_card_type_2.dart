@@ -34,6 +34,7 @@ class CustomCardType2 extends StatelessWidget {
   }
 }
 
+// ignore: camel_case_types
 class CustomCardType2_1 extends StatelessWidget {
   final String imageUrl;
   final String? name;
