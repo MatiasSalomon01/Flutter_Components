@@ -13,12 +13,12 @@ class AppRoutes {
         icon: Icons.home),
     MenuOption(
         route: 'listview1',
-        name: 'listview1',
+        name: 'ListView1 Tipo 1',
         screen: const ListView1Screen(),
         icon: Icons.list),
     MenuOption(
         route: 'listview2',
-        name: 'listview2',
+        name: 'ListView2 Tipo 2',
         screen: const ListView2Screen(),
         icon: Icons.list),
   ];
