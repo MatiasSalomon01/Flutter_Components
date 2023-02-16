@@ -30,7 +30,12 @@ class AppRoutes {
         route: 'alert_screen',
         name: 'Alert Screen',
         screen: const AlertScreen(),
-        icon: Icons.warning_rounded)
+        icon: Icons.warning_rounded),
+    MenuOption(
+        route: 'avatar_screen',
+        name: 'Avatar Screen',
+        screen: const AvatarScreen(),
+        icon: Icons.supervised_user_circle_rounded)
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
