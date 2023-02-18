@@ -18,7 +18,7 @@ class _SliderScreenState extends State<SliderScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Slider & Checks '),
+        title: const Text('Slider & Checks '),
       ),
       body: Padding(
         padding: const EdgeInsets.all(10),

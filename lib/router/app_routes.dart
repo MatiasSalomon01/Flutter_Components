@@ -55,7 +55,12 @@ class AppRoutes {
         route: 'checkBox_switch',
         name: 'Checkbox and Switch',
         screen: const CheckboxSwitchScreen(),
-        icon: Icons.toggle_off_outlined)
+        icon: Icons.toggle_off_outlined),
+    MenuOption(
+        route: 'listview_builder',
+        name: 'InfiniteSroll & Pull to refresh',
+        screen: const ListViewBuilderScreen(),
+        icon: Icons.build_circle_outlined)
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {

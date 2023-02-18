@@ -31,7 +31,7 @@ class _CheckboxSwitchScreenState extends State<CheckboxSwitchScreen> {
               value: state2,
               activeColor: AppTheme.primary,
               title: const Text('Slider'),
-              onChanged: (value) => setState(() {state2 = value ?? false;})
+              onChanged: (value) => setState(() {state2 = value;})
             )
           ],
         ),
