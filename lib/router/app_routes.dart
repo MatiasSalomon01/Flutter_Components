@@ -50,6 +50,11 @@ class AppRoutes {
         route: 'slider',
         name: 'Slider',
         screen: const SliderScreen(),
+        icon: Icons.color_lens_outlined),
+    MenuOption(
+        route: 'checkBox_switch',
+        name: 'Checkbox and Switch',
+        screen: const CheckboxSwitchScreen(),
         icon: Icons.toggle_off_outlined)
   ];
 
