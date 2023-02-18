@@ -30,10 +30,16 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
     if(isLoading) return;
     isLoading = true;
     setState(() {});
-    await Future.delayed(const Duration(seconds: 3));
+    await Future.delayed(const Duration(seconds: 1));
     add5();
     isLoading = false;
     setState(() {});
+
+    if(scrollController.position.pixels + 100 <= scrollController.position.maxScrollExtent )return;
+    scrollController.animateTo(
+      scrollController.position.pixels +120, 
+      duration: const Duration(milliseconds: 300), 
+      curve: Curves.bounceOut);
   }
 
 
@@ -69,11 +75,13 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
               },
               itemCount: imagesId.length,
             ),
-            Positioned(
-              bottom: 40,
-              left: size.width * 0.5 -30,
-              child: LoadingIcon()
-            ),
+
+            if(isLoading)
+              Positioned(
+                bottom: 40,
+                left: size.width * 0.5 -30,
+                child: const LoadingIcon()
+              ),
           ],
         )
       )
@@ -92,11 +100,11 @@ class LoadingIcon extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       height: 60,
       width: 60,
-      child: const CircularProgressIndicator(color: AppTheme.primary,),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.white,
         shape: BoxShape.circle
       ),
+      child: const CircularProgressIndicator(color: AppTheme.primary,),
     );
   }
 }
