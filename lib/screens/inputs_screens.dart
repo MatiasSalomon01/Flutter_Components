@@ -11,10 +11,10 @@ class InputScreen extends StatelessWidget {
 
     final Map<String, String> formValues = {
       'first_name': 'Matias',
-      'last_name': 'Salomon',
-      'email':'matias@gmail.com',
-      'password': '123456789',
-      'role': 'Admin'
+      'last_name' : 'Salomon',
+      'email'     : 'matias@gmail.com',
+      'password'  : '123456789',
+      'role'      : 'Admin'
     };
 
     return Scaffold(
@@ -41,6 +41,18 @@ class InputScreen extends StatelessWidget {
           
                 CustomInputField(hintText: 'Contraseña del Usuario', labelText: 'Contraseña', obscureText: true, formProperty: 'password', formValues: formValues),
                 const SizedBox(height: 30,),
+
+                DropdownButtonFormField<String>(
+                  items: const [
+                    DropdownMenuItem(value: 'Admin',child: Text('Admin')),
+                    DropdownMenuItem(value: 'Superuser',child: Text('Superuser')),
+                    DropdownMenuItem(value: 'Developer',child: Text('Developer')),
+                    DropdownMenuItem(value: 'Jr. Developer',child: Text('Jr. Developer')),
+                  ], 
+                  onChanged: (value) {
+                    formValues['role'] = value ?? 'Admin';
+                  },
+                ),
           
                 ElevatedButton(
                   onPressed: () {
