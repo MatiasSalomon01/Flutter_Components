@@ -30,29 +30,29 @@ class InputScreen extends StatelessWidget {
               children: [
                 const SizedBox(height: 30,),
           
-                const CustomInputField(hintText: 'Nombre del Usuario', labelText: 'Nombre'),
+                CustomInputField(hintText: 'Nombre del Usuario', labelText: 'Nombre', formProperty: 'first_name', formValues: formValues),
                 const SizedBox(height: 30,),
           
-                const CustomInputField(hintText: 'Apellido del Usuario', labelText: 'Apellido'),
+                CustomInputField(hintText: 'Apellido del Usuario', labelText: 'Apellido', formProperty: 'last_name', formValues: formValues),
                 const SizedBox(height: 30,),
           
-                const CustomInputField(hintText: 'Correo del Usuario', labelText: 'Correo', keyboardType: TextInputType.emailAddress),
+                CustomInputField(hintText: 'Correo del Usuario', labelText: 'Correo', keyboardType: TextInputType.emailAddress, formProperty: 'email', formValues: formValues),
                 const SizedBox(height: 30,),
           
-                const CustomInputField(hintText: 'Contraseña del Usuario', labelText: 'Contraseña', obscureText: true,),
+                CustomInputField(hintText: 'Contraseña del Usuario', labelText: 'Contraseña', obscureText: true, formProperty: 'password', formValues: formValues),
                 const SizedBox(height: 30,),
           
                 ElevatedButton(
                   onPressed: () {
 
-                    FocusScope.of(context).requestFocus(FocusNode());
+                    FocusScope.of(context).requestFocus(FocusNode()); //Ocultar el teclado
 
                     if (!myFormKey.currentState!.validate()){
                       print('Formulario no valido');
                       return;
                     }
                     print(formValues);
-                  }, 
+                  },
                   child: const SizedBox(
                     width: double.infinity,
                     child: Center(child: Text('Guardar'))
