@@ -50,6 +50,14 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
 
     setState(() {});
   }
+
+  Future<void> onRefrash() async{
+    await Future.delayed(const Duration(seconds: 2)); 
+    final lastId = imagesId.last;
+    imagesId.clear();
+    imagesId.add(lastId+1);
+    add5();
+  }
   @override
   Widget build(BuildContext context) {
 
@@ -62,18 +70,22 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
         removeBottom: true,
         child: Stack(
           children: [
-            ListView.builder(
-              controller: scrollController,
-              itemBuilder: (context, index) {
-                return FadeInImage(
-                  width: double.infinity,
-                  height: 300,
-                  fit: BoxFit.cover,
-                  placeholder: const AssetImage('assets/jar-loading.gif'), 
-                  image: NetworkImage('https://picsum.photos/500/300?image=${imagesId[index]}')
-                );
-              },
-              itemCount: imagesId.length,
+            RefreshIndicator(
+              color: AppTheme.primary,
+              onRefresh: onRefrash,
+              child: ListView.builder(
+                controller: scrollController,
+                itemBuilder: (context, index) {
+                  return FadeInImage(
+                    width: double.infinity,
+                    height: 300,
+                    fit: BoxFit.cover,
+                    placeholder: const AssetImage('assets/jar-loading.gif'), 
+                    image: NetworkImage('https://picsum.photos/500/300?image=${imagesId[index]}')
+                  );
+                },
+                itemCount: imagesId.length,
+              ),
             ),
 
             if(isLoading)
